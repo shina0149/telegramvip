@@ -8,10 +8,10 @@
   const container = document.getElementById('rainbow-bg');
   if (!container) return;
 
-  // Paleta verde bem escura e sutil
-  const green1 = 'rgba(10, 80, 35, 0.45)';   // verde escuro suave
-  const green2 = 'rgba(4, 50, 22, 0.55)';    // verde profundo
-  const green3 = 'rgba(16, 120, 55, 0.35)';   // verde esmeralda sutil
+  // Paleta verde ajustada para iluminação ideal no mobile e desktop
+  const green1 = 'rgba(22, 140, 65, 0.65)';   
+  const green2 = 'rgba(10, 90, 42, 0.75)';    
+  const green3 = 'rgba(30, 180, 85, 0.55)';   
 
   // 6 permutações das 3 cores
   const perms = [
@@ -23,9 +23,9 @@
     [green3, green1, green2],
   ];
 
-  const glow   = 'rgba(0, 0, 0, 0.4)'; // sombra escura para dar profundidade
-  const total  = 18;
-  const aTime  = 70; // Animação mais lenta para evitar o aspecto "travado/rápido"
+  const glow   = 'rgba(0, 0, 0, 0.3)';
+  const total  = 16;
+  const aTime  = 60;
 
   for (let i = 1; i <= total; i++) {
     const [c1, c2, c3] = perms[(i - 1) % 6];
@@ -35,11 +35,11 @@
     const div = document.createElement('div');
     div.className = 'rainbow';
     div.style.cssText = `
-      box-shadow: -130px 0 90px 45px ${glow},
-                  -50px 0 60px 30px ${c1},
-                  0 0 60px 30px ${c2},
-                  50px 0 60px 30px ${c3},
-                  130px 0 90px 45px ${glow};
+      box-shadow: -100px 0 70px 35px ${glow},
+                  -40px 0 45px 20px ${c1},
+                  0 0 45px 20px ${c2},
+                  40px 0 45px 20px ${c3},
+                  100px 0 70px 35px ${glow};
       animation: rainbow-slide ${duration.toFixed(1)}s linear infinite;
       animation-delay: ${delay.toFixed(1)}s;
     `;

@@ -33,25 +33,25 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.35;
+  opacity: 0.75;
 }
 
 #rainbow-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(2, 8, 0, 0.4) 0%, rgba(2, 8, 0, 0.95) 100%);
+  background: radial-gradient(circle at center, rgba(2, 8, 0, 0.25) 0%, rgba(2, 8, 0, 0.82) 100%);
   z-index: 1;
 }
 
 .rainbow {
-  height: 120vh;
+  height: 140vh;
   width: 0;
-  top: -10vh;
+  top: -20vh;
   position: absolute;
-  transform: rotate(15deg);
+  transform: rotate(15deg) translateZ(0);
   transform-origin: top right;
-  will-change: transform, right;
+  will-change: right;
 }
 
 .rainbow-h {
@@ -73,8 +73,8 @@ body {
 }
 
 @keyframes rainbow-slide {
-  from { right: -30vw; }
-  to   { right: 130vw; }
+  0%   { right: -40vw; }
+  100% { right: 140vw; }
 }
 
 /* ===========================
